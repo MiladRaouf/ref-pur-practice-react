@@ -1,0 +1,66 @@
+/* ================================================== All Style ===> */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+@font-face {
+    font-family: 'iranSans';
+    src: url(../fonts/IRANSans.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'iranSansBold';
+    src: url(../fonts/IRAN\ Sans\ Bold.ttf) format('TrueType');
+}
+
+body {
+    background: gray;
+    font-family: iranSans;
+    background: #136a8a;
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);
+    background: linear-gradient(to right, #267871, #136a8a);
+
+}
+
+/* ================================================== Small Size ===> */
+
+.main{
+    padding: 15px;
+}
+
+form{
+    width: 80%;
+    margin: 50px auto;
+}
+
+input{
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+}
+
+.button-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button{
+    border: none;
+    border-radius: 8px;
+    padding: 5px 8px;
+    width: fit-content;
+    margin: 0 5px;
+}
+
+.counter{
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
