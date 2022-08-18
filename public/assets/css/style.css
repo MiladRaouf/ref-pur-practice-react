@@ -26,41 +26,74 @@ body {
 
 }
 
-/* ================================================== Small Size ===> */
+/* ================================================== Xs Size ===> */
 
-.main{
+.main {
     padding: 15px;
 }
 
-form{
-    width: 80%;
+form {
+    width: 100%;
     margin: 50px auto;
 }
 
-input{
+input {
     width: 100%;
     border-radius: 10px;
     padding: 10px;
     border: none;
+    margin-bottom: 50px;
 }
 
-.button-box{
+.button-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
-button{
+button {
     border: none;
     border-radius: 8px;
-    padding: 5px 8px;
+    padding: 8px;
     width: fit-content;
+    min-width: 100px;
     margin: 0 5px;
+    transition: 0.2s;
 }
 
-.counter{
-    font-size: 2em;
+.save {
+    background: #5BB318;
+    color: #fff;
+}
+
+.save:hover {
+    background: #7DCE13;
+}
+
+.delete {
+    background: #EB1D36;
+    color: #fff;
+}
+
+.delete:hover {
+    background: #F32424;
+}
+
+.counter {
+    font-size: 3em;
     text-align: center;
     margin-top: 20px;
+    color: #fff;
 }
+
+/* ================================================== Sm Size ===> */
+/* ================================================== Md Size ===> */
+/* ================================================== Lg Size ===> */
+
+@media screen and (min-width:992px) {
+    form {
+        width: 80%;
+    }
+}
+
+/* ================================================== Xl Size ===> */

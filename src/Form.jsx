@@ -1,42 +1,34 @@
-import React, { Component, createRef, Fragment, PureComponent } from "react";
+import React, { forwardRef, Fragment, useRef, useState } from "react";
 import ReactDOM from 'react-dom/client';
 
 
-class Form extends PureComponent {
-    constructor() {
-        super();
+let counter = 0;
 
-        this.state = { text: '' };
-        this.inputType = createRef();
-        this.counter = 0;
-    }
+const Form = (prop, ref) => {
+    const [text, setText] = useState('');
 
-    handleChangeText = () => {
-        this.setState({
-            text: this.inputType.current.value
-        });
+    const handleChangeText = () => {
+        setText(ref.current.value);
     };
 
-    handleDeleteText = () => {
-        this.inputType.current.value = '';
+    const handleDeleteText = () => {
+        ref.current.value = '';
     };
 
-    render() {
-        return (
-            <Fragment>
-                <form onClick={e => e.preventDefault()}>
-                    <input ref={this.inputType} type="text" placeholder="فعالیت مورد نظر خود را وارد کنید"></input>
-                    <div className="button-box">
-                        <button onClick={this.handleChangeText}>ثبت</button>
-                        <button onClick={this.handleDeleteText}>حذف متن</button>
-                    </div>
-                </form>
+    return (
+        <Fragment>
+            <form onClick={e => e.preventDefault()}>
+                <input ref={ref} type="text" placeholder="کلمه خود را وارد کنید"></input>
+                <div className="button-box">
+                    <button className="save" onClick={handleChangeText}>ثبت</button>
+                    <button className="delete" onClick={handleDeleteText}>حذف متن</button>
+                </div>
+            </form>
 
-                <h6 className="counter">{this.counter++}</h6>
-            </Fragment>
-        );
-    }
-}
+            <h6 className="counter">{counter++}</h6>
+        </Fragment>
+    );
+};
 
 
-export default Form;
+export default forwardRef(Form);

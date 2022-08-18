@@ -1,25 +1,18 @@
-import React, { createRef, PureComponent } from "react";
+import React, { useEffect, useRef } from "react";
 import Form from "./Form";
 
-class ParentComponent extends PureComponent {
-    constructor() {
-        super();
+const ParentComponent = () => {
+    const inputType = useRef();
 
-        this.FormRefrence = createRef();
-    }
+    useEffect(() => {
+        inputType.current.focus();
+    });
 
-    handleDeleteTextFromForm = () => {
-        this.FormRefrence.current.handleDeleteText();
-    }
-
-    render() {
-        return (
-            <section className="main">
-                <Form ref={this.FormRefrence} />
-                <button onClick={this.handleDeleteTextFromForm}>delete from ParentComponent</button>
-            </section>
-        )
-    }
-}
+    return (
+        <section className="main">
+            <Form ref={inputType} />
+        </section>
+    );
+};
 
 export default ParentComponent;
